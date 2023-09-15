@@ -30,7 +30,7 @@ export class App extends Component {
         this.setState({loading: true})
         const newImages = await fetchImages(fetchQuery, page);
         if (newImages.total === 0) {
-          toast.error(`No pictires for the search "${checkQuery}". Try again.`);                
+          toast.error(`No images for the search "${checkQuery}". Try again.`);                
         }
         this.setState(prev => ({
           images: [...prev.images, ...newImages.hits],
