@@ -15,13 +15,7 @@ export class ImageGalleryItem extends Component {
     closeModal = () => {
         this.setState({ modalIsOpen: false });
     } 
-    onBackdropeClick = (evt) => {
-        if (evt.target === evt.currentTarget) {
-            this.closeModal();
-        }
-    }
-
-
+    
     render() {
         const { item: { tags, webformatURL, largeImageURL } } = this.props;
         const { modalImg, modalIsOpen} = this.state;
@@ -35,7 +29,6 @@ export class ImageGalleryItem extends Component {
                 <Modal img={modalImg}
                     modalIsOpen={modalIsOpen}
                     closeModal={this.closeModal}
-                    onBackdropeClick={this.onBackdropeClick}
                      />
             </ImgWrapper>
         )

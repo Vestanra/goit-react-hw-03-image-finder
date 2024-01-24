@@ -24,12 +24,17 @@ export const ButtonIcon = styled.button`
 `;
 
 export const Input = styled.input`
-    min-width: 320px;
+    width: 320px;
     padding: 10px;
     font-size: 16px;
     border: 1px solid #ccc;
     border-radius: 4px;
     outline: none;
+
+    @media (max-width: 767px){
+    width: 220px;
+    font-size: 14px;
+  }
 `;
 
 export const Icon = styled(BiSearchAlt)`

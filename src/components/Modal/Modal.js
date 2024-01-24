@@ -1,30 +1,32 @@
 import ReactModal from 'react-modal'; 
-import { ModalWrapper, ModalImg } from './Modal.styled';
+import { ModalImg, StyledReactModal } from './Modal.styled';
 import { Component } from 'react';
 import PropTypes from 'prop-types';
 ReactModal.setAppElement('#modal-root');
 
 export class Modal extends Component {
   render() {
-    const { img, modalIsOpen, onBackdropeClick, closeModal } = this.props;
+    const { img, modalIsOpen, closeModal } = this.props;
     
     return (
-      <ReactModal
+      <StyledReactModal
         contentLabel="Modal"
         isOpen={modalIsOpen}
         onRequestClose={closeModal}
+        style={{
+          overlay: {
+            backgroundColor: 'rgba(0, 0, 0, 0.8)',
+          },
+        }}
       >
-          <ModalWrapper onClick={onBackdropeClick}>
-            <ModalImg src={img} />
-          </ModalWrapper>
-        </ReactModal>
-    )
+        <ModalImg src={img} />
+      </StyledReactModal>
+    );
   }
-}
+};
 
 Modal.propTypes = {
   img: PropTypes.string.isRequired,
   modalIsOpen: PropTypes.bool.isRequired,
-  onBackdropeClick: PropTypes.func.isRequired,
   closeModal: PropTypes.func.isRequired,
 }
