@@ -11,19 +11,6 @@ max-height: 90vh;
 overflow-y: auto;
 padding: 24px 12px;
 box-sizing: border-box;
-
-/* @media (min-width: 1440px) {
-    width: 592px;
-    padding: 32px 24px;
-  }
-
-@media (min-width: 768px) and (max-width: 1439px){
-    width: 704px;
-    padding: 32px 24px;
-  }
-@media (min-width: 320px) and (max-width: 767px){
-    width: 280px;
-  } */
 `;
 
 export const ModalImg = styled.img`
